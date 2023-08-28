@@ -1,11 +1,13 @@
 import * as React from 'react';
+import * as SlackWorkflowModal from '@/components/SlackWorkflowModal';
 
 export const Component = () => {
-  const [count, setCount] = React.useState(0);
+  const [showModal, setShowModal] = React.useState(false);
 
   return (
     <div>
-      <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+      <button onClick={() => setShowModal(true)}>モーダルを表示</button>
+      {showModal && <SlackWorkflowModal.Component />}
     </div>
   );
 };

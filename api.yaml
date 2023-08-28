@@ -1,0 +1,24 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Slack Proxy API
+paths:
+  /postMessage:
+    post:
+      summary: Post a message to Slack
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                channel:
+                  type: string
+                message:
+                  type: string
+      responses:
+        "200":
+          description: Message posted successfully
+        "400":
+          description: Bad request
